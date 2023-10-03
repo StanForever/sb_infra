@@ -34,12 +34,13 @@ module "web_server" {
 module "mysql_db" {
   source = "./modules/rds_instance"
 
-  db_name           = "sb_db"
-  allocated_storage = 10
-  instance_class    = "db.t2.micro"
-  engine            = "mysql"
-  engine_version    = "8.0"
-  rds_username      = var.db_username
+  db_name                 = "sb_db"
+  allocated_storage       = 10
+  backup_retention_period = 7
+  instance_class          = "db.t2.micro"
+  engine                  = "mysql"
+  engine_version          = "8.0"
+  rds_username            = var.db_username
   # rds_password        = var.db_password
   security_group_ids  = [aws_security_group.rds_sg.id]
   private_subnet_ids  = module.vpc.private_subnet_ids

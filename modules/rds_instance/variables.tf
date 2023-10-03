@@ -30,6 +30,11 @@ variable "private_subnet_ids" {
   type        = list(string)
 }
 
+variable "backup_retention_period" {
+  description = "The days to retain automatic database backups for"
+  type        = number
+}
+
 variable "rds_username" {
   description = "The username for the RDS instance"
 }

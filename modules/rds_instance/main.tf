@@ -5,7 +5,6 @@ resource "aws_db_instance" "rds" {
   engine                      = var.engine
   engine_version              = var.engine_version
   instance_class              = var.instance_class
-  storage_encrypted           = true
   db_name                     = var.db_name
   username                    = var.rds_username
   manage_master_user_password = true

@@ -22,7 +22,7 @@ module "web_server" {
   source = "./modules/ec2_instance"
 
   ami_id             = data.aws_ssm_parameter.my-amzn2-linux-ami.value
-  instance_type      = "t2.small"
+  instance_type      = "t3.small"
   key_name           = "sb_virginia_keypair"
   public_subnet_ids  = module.vpc.public_subnet_ids
   security_group_ids = [aws_security_group.ec2_sg.id]
